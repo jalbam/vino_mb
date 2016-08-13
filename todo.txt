@@ -1,0 +1,31 @@
+ToDo.txt
+--------
+
+Admin:
+
+* En la carpeta admin, si no existe "password.php", crearlo. Si existe, incluir auth.php y preguntar por el pass que hay en password.php. Si existe /include/config, poder modificarlo. Si no existe, crearlo (en ambos casos es el mismo formulario ya que preguntara lo mismo al usuario).
+* Poder modificar la base de datos borrando o poniendo items en admin/index.php gracias a admin/include/edit_bd.php
+* Poder modificar include/config.php en admin/index.php gracias a admin/include/edit_config.php
+* Poder editar include/config.php desde admin/index.php
+* Crear base de datos desde admin/index.php gracias a /admin/include/make_bd.php (y poder borrarla con delete_bd.php)
+* admin/index.php sera un menu con opciones de lo que queremos hacer (backup, insert/delete/edit items, edit config, etc...)
+* Preguntar el nombre de la BD y el de las tablas en admin/index.php antes de crearla.
+
+
+Seguridad, errores:
+
+* Poner @ delante de las funciones importantes que deben ocultarse (mysql_connect, etc.)
+* Probar a acceder a todos los .php por separado, por si hay errores o problemas de seguridad, etc. y subsanarlos.
+* Poner un index.php en todos los directorios y subdirectorios que no exista este archivo, para impedir listar su contenido. En este index.php estara en blanco o pondra acceso denegado.
+* Comprobar compatibilidaed kon servidores linux, beos y todos los navegadores (sobretodo mysql_select_db, etc.).
+* si $resultado = FALSE o esta vacio, no ejhecutar mysql_fetch_assoc($resultado) en los while o probar a poner @ delante para que no muestre el error (usar mysql_num_rows).
+* al hacer el javascript refresh, guardar las variables en get si existen
+
+
+Otros:
+* Crear un leeme.txt y darle un nombre y una version al programa y en este archivo mostrar las instrucciones, creditos, etc.
+* Si existe /include/extra/pdf.php, dar la posibilidad al usuario en products.php de descargar el listado que ha realizado en formato php para imprimirlo o lo que sea.
+* poder elegir entre busqueda por sentencia entera (todas las palabras) o que aunque coincida con solo una palabra ya se muestre.
+* hacer un contador de visitas
+* poner valing, etc. en los TD's donde hay la imagen de la cesta, etc. para ponerlo en middle. tambien en otros lados en top si es preciso, etc.
+* settimeout de javascript antes de ejecutar un window.focus(), por si a caso en algunos navegadores la tapa inmediatamente.
